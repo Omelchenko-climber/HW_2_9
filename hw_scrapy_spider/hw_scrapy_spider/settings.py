@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   "hw_scrapy_spider.pipelines.HwScrapySpiderPipeline": 300,
-}
+# ITEM_PIPELINES = {
+#    "hw_scrapy_spider.pipelines.AuthorsScrapySpiderPipeline": 400,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

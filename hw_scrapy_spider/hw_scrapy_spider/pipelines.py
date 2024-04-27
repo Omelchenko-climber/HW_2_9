@@ -8,10 +8,11 @@
 from itemadapter import ItemAdapter
 
 
-class HwScrapySpiderPipeline:
+# class QuotesScrapySpiderPipeline:
+#     def process_item(self, item, spider):
+#         pass
+
+
+class AuthorsScrapySpiderPipeline:
     def process_item(self, item, spider):
-        if spider.name == "authors":
-            normal_description: str = item.get("description")
-            if normal_description:
-                item["description"] = normal_description.strip("\n").strip()
-        return item
+        pass

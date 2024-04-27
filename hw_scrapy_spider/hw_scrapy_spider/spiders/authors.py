@@ -18,5 +18,5 @@ class AuthorsSpider(scrapy.Spider):
             "fullname": response.css("h3.author-title::text").get(),
             "born_date": response.css("span.author-born-date::text").get(),
             "born_location": response.css("span.author-born-location::text").get(),
-            "description": response.css("div.author-description::text").get()
+            "description": response.css("div.author-description::text").get().strip("\n").strip()
         }
