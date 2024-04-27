@@ -1,5 +1,4 @@
 import scrapy
-import codecs
 
 
 class QuotesSpider(scrapy.Spider):
