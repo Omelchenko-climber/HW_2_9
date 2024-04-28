@@ -15,9 +15,9 @@ def main():
     process.crawl(authors.AuthorsSpider)
     process.start()
 
-    # send_data()
+    send_data()
 
-    # get_quote()
+    get_quote()
 
 
 if __name__ == '__main__':

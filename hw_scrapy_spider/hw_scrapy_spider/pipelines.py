@@ -5,14 +5,9 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
+# from itemadapter import ItemAdapter
 
 
 # class QuotesScrapySpiderPipeline:
 #     def process_item(self, item, spider):
 #         pass
-
-
-class AuthorsScrapySpiderPipeline:
-    def process_item(self, item, spider):
-        pass

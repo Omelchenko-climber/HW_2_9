@@ -10,8 +10,13 @@ class AuthorsSpider(scrapy.Spider):
     def parse(self, response):
         for quote in response.xpath("/html//div[@class='quote']"):
             about = quote.xpath("span/a/@href").get()
+
             if about:
                 yield response.follow(about, callback=self.parse_author)
+
+            next_link = response.xpath("//li[@class='next']/a/@href").get()
+            if next_link:
+                yield response.follow(next_link, callback=self.parse)
 
     def parse_author(self, response):
         yield {

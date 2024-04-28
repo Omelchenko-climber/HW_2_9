@@ -17,10 +17,9 @@ def get_quote():
         match command:
             case "name":
                 name, = details
-                author_id, = [auth.id for auth in Authors.objects() if (auth.fullname == name)
-                              or ("".join([word[0].lower() for word in auth.fullname.split()]) == name)
-                              or (auth.fullname[:2].lower() == name)]
-                list_quotes = [q.quote for q in Quotes.objects() if q.author.id == author_id]
+                for auth_id in [auth.id for auth in Authors.objects() if (auth.fullname == name)
+                              or (auth.fullname[:2].lower() == name)]:
+                    list_quotes.extend([q.quote for q in Quotes.objects() if q.author.id == auth_id])
             case "tag":
                 tag, = details
                 list_quotes = []

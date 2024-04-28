@@ -15,6 +15,7 @@ class QuotesSpider(scrapy.Spider):
                 "author": quote.xpath("span/small/text()").get(),
                 "quote": quote_text.replace("\u201c", '', 1).replace("\u201d", '', 1)
             }
+
         next_link = response.xpath("//li[@class='next']/a/@href").get()
         if next_link:
             yield response.follow(next_link, callback=self.parse)
